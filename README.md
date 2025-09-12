@@ -1,4 +1,4 @@
-# pdf-annotator
+
 # PDF Annotator
 
 A full-stack PDF annotation tool that allows users to upload PDFs, highlight text, and save annotations. Built with **React**, **Node.js**, **Express**, and **MongoDB**.
