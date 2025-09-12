@@ -23,3 +23,25 @@ export const addHighlight = (data, token) => axios.post(`${API_URL}/highlights`,
 export const getHighlights = (uuid, token) => axios.get(`${API_URL}/highlights/${uuid}`, {
     headers: { Authorization: `Bearer ${token}` },
 });
+export const saveHighlight = (highlight, token) => {
+  return axios.post('http://localhost:5000/api/highlights', highlight, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};
+export const renamePDF = (uuid, newName, token) => {
+    return axios.put(`http://localhost:5000/api/pdfs/${uuid}`, { newName }, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+};
+
+export const deletePDF = (uuid, token) => {
+    return axios.delete(`http://localhost:5000/api/pdfs/${uuid}`, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    });
+};

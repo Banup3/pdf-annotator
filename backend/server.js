@@ -7,6 +7,8 @@ const pdfRoutes = require('./routes/pdfroutes');
 const highlightRoutes = require('./routes/highlightroutes');
 const path = require('path');
 
+
+
 dotenv.config();
 
 const app = express();
@@ -29,3 +31,11 @@ app.use('/api/highlights', highlightRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const fs = require('fs');
+
+const uploadDir = path.join(__dirname, 'uploads');
+
+// Create the uploads folder if it doesn't exist
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+}
